@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "dom"],   // Add "dom" for browser environment support
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",           // Enable JSX support (for React 17+)
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "allowImportingTsExtensions": true   // Allow importing .tsx files explicitly
+  },
+  "include": [
+    "src/**/*",    // Make sure all source files are included
+    "vite.config.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
