@@ -5,23 +5,28 @@ import TaskList from "../components/TaskList";
 export type Task = {
   task: string;
   completed: boolean;
+  date: string;  // Add date to task
 };
 
 export default function Todo() {
-  const [taskList, setTaskList] = useState([
-    { task: "this is first", completed: true },
-    { task: "this is second", completed: false },
-    { task: "this is third", completed: false },
+  const [taskList, setTaskList] = useState<Task[]>([
+    { task: "this is first", completed: true, date: "2025-01-01" },
+    { task: "this is second", completed: false, date: "2025-01-02" },
+    { task: "this is third", completed: false, date: "2025-01-03" },
   ]);
 
-  const addTask = (newTask:string) => {
+
+
+  const addTask = (newTask: string) => {
     if (!newTask.trim()) {
       return;
     }
-  
+
+    const newDate = new Date().toISOString();
+
     setTaskList((prevTaskList) => [
       ...prevTaskList,
-      { task: newTask, completed: false },
+      { task: newTask, completed: false, date: newDate },
     ]);
   };
 
